@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- reduce : tính toán
+        thường thì for thường : code dài hơn
+     -->
+    <script>
+        let numbers = [5,2,11,4,7];
+        let count = 0;// innitial giá trị khởi tạo
+        for (let i = 0; i < numbers.length; i++) {
+            count += numbers[i] // gán giá trị
+        }
+        console.log(count);
+        // accumulator : biến tích lũy
+        let total = numbers.reduce((accumulator,currentValue,arr)=>{
+            return accumulator+currentValue;
+        },0)
+        console.log(total);
+        let sum = numbers.reduce((accumulator, currentValue, arr) =>{
+            return accumulator+currentValue;
+        })
+        console.log(sum);
+        let carts = [
+            {
+                name: "iphone1",
+                quantity: 3,
+                price:2000,
+            },
+            {
+                name: "iphone2",
+                quantity: 5,
+                price:7000,
+            },
+            {
+                name: "iphone3",
+                quantity: 8,
+                price:12000,
+            },
+
+        ];
+        let result = carts.reduce((accumulator, currentValue, arr) => {
+            return accumulator + currentValue.price * currentValue.quantity;
+        },0)
+        console.log(result);
+    </script>
+</body>
+</html>
